@@ -1,0 +1,40 @@
+﻿<div class="card">
+  <h2 style="margin-left: 10px;margin-top: 10px;">Users</h2>
+  <p-table [value]="users" dataKey="email" editMode="row">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th style="width:8rem"></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user let-editing="editing" let-ri="rowIndex">
+      <tr [pEditableRow]="user">
+        <td pEditableColumn>
+          <p-cellEditor *ngIf="editing">
+            <ng-template pTemplate="input">
+              <input pInputText type="text" [(ngModel)]="user.fullName">
+            </ng-template>
+            <ng-template pTemplate="output">
+              {{user.fullName}}
+            </ng-template>
+          </p-cellEditor>
+          <div *ngIf="!editing">
+            {{user.fullName}}
+          </div>
+        </td>
+        <td>
+          {{user.email}}
+        </td>
+        <td style="text-align:center">
+          <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil"
+            (click)="onRowEditInit(user)" class="p-button-rounded p-button-text"></button>
+          <button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check"
+            (click)="onRowEditSave(user)" class="p-button-rounded p-button-text p-button-success p-mr-2"></button>
+          <button *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times"
+            (click)="onRowEditCancel(user, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

@@ -1,0 +1,147 @@
+﻿
+<div class="card" *ngIf="lodgingsLoaded">
+  <p-toolbar styleClass="p-mb-4">
+    <ng-template pTemplate="left">
+      <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2"
+        (click)="openNew()"></button>
+    </ng-template>
+  </p-toolbar>
+
+  <p-table #dt [value]="lodgings" [rows]="10" [paginator]="true"
+    [globalFilterFields]="['name','country.name','representative.name','status']" [(selection)]="selectedLodgings"
+    [rowHover]="true" dataKey="id" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [showCurrentPageReport]="true">
+    <ng-template pTemplate="caption">
+      <div class="p-d-flex p-ai-center p-jc-between">
+        <h5 class="p-m-0">Gestionar Hospedajes</h5>
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
+            placeholder="Search..." />
+        </span>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 3rem">
+          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+        </th>
+        <th pSortableColumn="name">Nombre <p-sortIcon field="name"></p-sortIcon>
+        </th>
+        <th>Direccion</th>
+        <th pSortableColumn="price">Precio <p-sortIcon field="price"></p-sortIcon>
+        </th>
+        <th pSortableColumn="available">Disponibilidad</th>
+        <th pSortableColumn="stars">Ranking <p-sortIcon field="stars"></p-sortIcon>
+        </th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-lodging>
+      <tr>
+        <td>
+          <p-tableCheckbox [value]="lodging"></p-tableCheckbox>
+        </td>
+        <td>{{lodging.name}}</td>
+        <td>{{lodging.address}}</td>
+        <td>{{lodging.pricePerNight | currency:'USD'}}</td>
+        <td *ngIf="lodging.available">Disponible</td>
+        <td *ngIf="!lodging.available">No Disponible</td>
+        <td>
+          <p-rating [ngModel]="lodging.stars" [readonly]="true" [cancel]="false"></p-rating>
+        <td>
+        <td>
+          <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2"
+            (click)="editLodging(lodging)"></button>
+          <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
+            (click)="deleteLodging(lodging)"></button>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      <div class="p-d-flex p-ai-center p-jc-between">
+        En total son {{lodgings ? lodgings.length : 0 }} alojamientos.
+      </div>
+    </ng-template>
+  </p-table>
+</div>
+
+
+<p-dialog *ngIf="lodging" [(visible)]="lodgingDialog" [style]="{width: '550px'}" header="Detalles del alojamiento"
+  [modal]="true" styleClass="p-fluid">
+  <p-scrollPanel [style]="{width: '100%', height: '500px'}">
+    <ng-template pTemplate="content">
+      <div class="p-formgrid p-grid">
+        <div class="p-field p-col p-md-6">
+          <label for="name">Nombre</label>
+          <input type="tenamext" pInputText id="name" [(ngModel)]="lodging.name" required autofocus />
+          <small class="p-invalid" *ngIf="submitted && !lodging.name">Name is required.</small>
+        </div>
+        <div class="p-field p-col p-md-6">
+          <label for="telephone">Telefono</label>
+          <input type="text" pInputText id="telephone" [(ngModel)]="lodging.telephone" required autofocus />
+          <small class="p-invalid" *ngIf="submitted && !lodging.telephone">Telephone is required.</small>
+        </div>
+      </div>
+      <div class="p-formgrid p-grid">
+        <div class="p-field p-col p-md-12">
+          <label for="address">Dirección</label>
+          <input type="text" pInputText id="address" [(ngModel)]="lodging.address" required autofocus />
+          <small class="p-invalid" *ngIf="submitted && !lodging.address">Address is required.</small>
+        </div>
+      </div>
+      <div class="p-field">
+        <label for="description">Description</label>
+        <textarea id="description" pInputTextarea [(ngModel)]="lodging.description" required rows="3"
+          cols="20"></textarea>
+      </div>
+      <div class="p-field">
+        <label for="informationText">Información</label>
+        <textarea id="informationText" pInputTextarea [(ngModel)]="lodging.informationText" required rows="3"
+          cols="20"></textarea>
+      </div>
+      <div class="p-formgrid p-grid">
+        <div class="p-field p-col p-md-6">
+          <label for="pricePerNight">Precio por noche</label>
+          <p-inputNumber id="pricePerNight" [(ngModel)]="lodging.pricePerNight" mode="currency" currency="USD"
+            locale="en-US"></p-inputNumber>
+        </div>
+        <div class="p-field p-col p-md-6">
+          <label for="stars">Estrellas</label>
+          <p-inputNumber id="stars" [(ngModel)]="lodging.stars"></p-inputNumber>
+        </div>
+      </div>
+
+      <div class="p-formgrid p-grid">
+        <div class="p-field p-col p-md-12">
+          <label for="available">Disponibilidad</label>
+          <p-dropdown [options]="statuses" [(ngModel)]="lodging.available" optionLabel="label"
+            optionDisabled="inactive">
+          </p-dropdown>
+        </div>
+      </div>
+
+      <div class="p-formgrid p-grid">
+        <div class="p-field p-col p-md-6">
+          <label for="Name">Lugar turístico</label>
+          <input type="text" pInputText id="touristLocation" [(ngModel)]="lodging.touristLocation" required autofocus />
+          <!--<small class="p-invalid" *ngIf="submitted && !lodging.touristLocation.name">Tourist location is
+            required.</small>-->
+        </div>
+        <div class="p-field p-col p-md-6">
+          <label for="informationText">Información</label>
+          <input type="text" pInputText id="informationText" [(ngModel)]="lodging.informationText" required autofocus />
+          <small class="p-invalid" *ngIf="submitted && !lodging.informationText">Information text is required.</small>
+        </div>
+      </div>
+
+    </ng-template>
+  </p-scrollPanel>
+
+  <ng-template pTemplate="footer">
+    <button pButton pRipple label="Cancelar" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+    <button pButton pRipple label="Guardar" icon="pi pi-check" class="p-button-text" (click)="saveLodging()"></button>
+  </ng-template>
+</p-dialog>
+
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>

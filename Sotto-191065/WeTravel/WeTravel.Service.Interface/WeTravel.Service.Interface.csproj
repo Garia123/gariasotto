@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>WeTravel.BusinessLogic.Interface</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MassLodgingImporter\MassLodgingImporter.csproj" />
+    <ProjectReference Include="..\WeTravel.Model\WeTravel.Model.csproj" />
+  </ItemGroup>
+
+</Project>

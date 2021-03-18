@@ -1,0 +1,2410 @@
+{
+	"info": {
+		"_postman_id": "9daf0a99-8535-4c31-a449-f01f4c170f90",
+		"name": "WeTravel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Lodgings",
+			"item": [
+				{
+					"name": "Create",
+					"item": [
+						{
+							"name": "AddOk",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "da81edfb-3d3a-4f61-84cf-832ac922749e",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\":\"Mc Donalds\",\r\n    \"Stars\" : 4,\r\n    \"Address\" : \"test addr1234\",\r\n    \"Description\" : \"This is a test lodging\",\r\n    \"PricePerNight\": 123,\r\n    \"Available\" : true,\r\n    \"Telephone\" : \"12334442\",\r\n    \"InformationText\" : \"This is a text\",\r\n    \"TuristLocationId\" : \"CB584CEC-7FB5-9DB7-EA01-24D5440A4BB4\"    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{lodgingEnpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{lodgingEnpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddNoName",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "17dbde73-3467-4aa6-806e-db4c5aeb6150",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Stars\" : 4,\r\n    \"Address\" : \"test addr1234\",\r\n    \"Description\" : \"This is a test lodging\",\r\n    \"PricePerNight\": 123,\r\n    \"Available\" : true,\r\n    \"Telephone\" : \"12334442\",\r\n    \"InformationText\" : \"This is a text\",\r\n    \"TuristLocationId\" : \"CB584CEC-7FB5-9DB7-EA01-24D5440A4BB4\"    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{lodgingEnpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{lodgingEnpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddNoStars",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "fcbb15a3-1057-490f-9d70-f350ea2ad306",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\":\"Mc Donalds\",\r\n    \"Address\" : \"test addr1234\",\r\n    \"Description\" : \"This is a test lodging\",\r\n    \"PricePerNight\": 123,\r\n    \"Available\" : true,\r\n    \"Telephone\" : \"12334442\",\r\n    \"InformationText\" : \"This is a text\",\r\n    \"TuristLocationId\" : \"CB584CEC-7FB5-9DB7-EA01-24D5440A4BB4\"    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{lodgingEnpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{lodgingEnpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddNoAddres",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f054bce2-e4a8-438e-a988-c718070c51ce",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\":\"Mc Donalds\",\r\n    \"Stars\" : 4,\r\n    \"Description\" : \"This is a test lodging\",\r\n    \"PricePerNight\": 123,\r\n    \"Available\" : true,\r\n    \"Telephone\" : \"12334442\",\r\n    \"InformationText\" : \"This is a text\",\r\n    \"TuristLocationId\" : \"CB584CEC-7FB5-9DB7-EA01-24D5440A4BB4\"    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{lodgingEnpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{lodgingEnpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddNoPricePerNight",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "186d48b4-2ca1-47b4-a988-efa7dda25561",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\":\"Mc Donalds\",\r\n    \"Stars\" : 4,\r\n    \"Address\" : \"test addr1234\",\r\n    \"Description\" : \"This is a test lodging\",\r\n    \"Available\" : true,\r\n    \"Telephone\" : \"12334442\",\r\n    \"InformationText\" : \"This is a text\",\r\n    \"TuristLocationId\" : \"CB584CEC-7FB5-9DB7-EA01-24D5440A4BB4\"    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{lodgingEnpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{lodgingEnpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddNoDescription",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9c579b83-9418-4fec-a912-2b2bcf57e9c2",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\":\"Mc Donalds\",\r\n    \"Stars\" : 4,\r\n    \"Address\" : \"test addr1234\",\r\n    \"PricePerNight\": 123,\r\n    \"Available\" : true,\r\n    \"Telephone\" : \"12334442\",\r\n    \"InformationText\" : \"This is a text\",\r\n    \"TuristLocationId\" : \"CB584CEC-7FB5-9DB7-EA01-24D5440A4BB4\"    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{lodgingEnpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{lodgingEnpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddNoTel",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bbf17907-eb3b-4019-adfe-05012531dff0",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\":\"Mc Donalds\",\r\n    \"Stars\" : 4,\r\n    \"Address\" : \"test addr1234\",\r\n    \"Description\" : \"This is a test lodging\",\r\n    \"PricePerNight\": 123,\r\n    \"Available\" : true,\r\n    \"InformationText\" : \"This is a text\",\r\n    \"TuristLocationId\" : \"CB584CEC-7FB5-9DB7-EA01-24D5440A4BB4\"    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{lodgingEnpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{lodgingEnpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddNoInfo",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7d045368-d419-4da5-8714-21b788383248",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\":\"Mc Donalds\",\r\n    \"Stars\" : 4,\r\n    \"Address\" : \"test addr1234\",\r\n    \"Description\" : \"This is a test lodging\",\r\n    \"PricePerNight\": 123,\r\n    \"Available\" : true,\r\n    \"Telephone\" : \"12334442\",\r\n    \"TuristLocationId\" : \"CB584CEC-7FB5-9DB7-EA01-24D5440A4BB4\"    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{lodgingEnpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{lodgingEnpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddNoTuristLocation",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e947f302-6f62-426b-b061-4835806812e5",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\":\"Mc Donalds\",\r\n    \"Stars\" : 4,\r\n    \"Address\" : \"test addr1234\",\r\n    \"Description\" : \"This is a test lodging\",\r\n    \"PricePerNight\": 123,\r\n    \"Available\" : true,\r\n    \"Telephone\" : \"12334442\",\r\n    \"InformationText\" : \"This is a text\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{lodgingEnpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{lodgingEnpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddInvalidTuristLocation",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7cfc3979-0846-4cd1-b555-47f7cc94f0e7",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\":\"Mc Donalds\",\r\n    \"Stars\" : 4,\r\n    \"Address\" : \"test addr1234\",\r\n    \"Description\" : \"This is a test lodging\",\r\n    \"PricePerNight\": 123,\r\n    \"Available\" : true,\r\n    \"Telephone\" : \"12334442\",\r\n    \"InformationText\" : \"This is a text\",\r\n    \"TuristLocationId\" : \"00000000-0000-0000-0000-000000000000\"    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{lodgingEnpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{lodgingEnpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddNullModel",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bd031d7f-9570-47df-8ad9-277336b3a9d7",
+										"exec": [
+											"pm.test(\"Status code is 415\", function () {\r",
+											"  pm.response.to.have.status(415);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/{{lodgingEnpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{lodgingEnpoint}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Update",
+					"item": [
+						{
+							"name": "ActivateNonExistant",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7affaff9-b17a-4592-a0d0-aad7f7d2cefc",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/{{lodgingEnpoint}}/00000000-0000-0000-0000-000000000000",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{lodgingEnpoint}}",
+										"00000000-0000-0000-0000-000000000000"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ActivateExistant",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f1803782-c46e-433b-b571-76b64196c575",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/{{lodgingEnpoint}}/0b408348-0793-465d-9f9f-017da0bbc2ae",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{lodgingEnpoint}}",
+										"0b408348-0793-465d-9f9f-017da0bbc2ae"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ActivateInvalid",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ae2d1b9d-8af0-4988-b4f6-0a9ac980d1e6",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/{{lodgingEnpoint}}/itiswrong",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{lodgingEnpoint}}",
+										"itiswrong"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get",
+					"item": [
+						{
+							"name": "GetAll",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c28862f8-5925-44d3-b05b-3b37d7118c2f",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/{{lodgingEnpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{lodgingEnpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetLodgingById",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6b87579d-9a4b-44bc-a33b-d4368cb38f06",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/{{lodgingEnpoint}}?TuristLocationId=0C877B25-6240-1647-738B-1E0DA9F96DBD",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{lodgingEnpoint}}"
+									],
+									"query": [
+										{
+											"key": "TuristLocationId",
+											"value": "0C877B25-6240-1647-738B-1E0DA9F96DBD"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetByFilterTuristLocation",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "fae38546-c627-419c-89b5-d56dcb98993d",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/{{lodgingEnpoint}}?TuristLocationId=0C877B25-6240-1647-738B-1E0DA9F96DBD",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{lodgingEnpoint}}"
+									],
+									"query": [
+										{
+											"key": "TuristLocationId",
+											"value": "0C877B25-6240-1647-738B-1E0DA9F96DBD"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetLodgingByIdNonExistant",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7184a66d-4da6-4e6c-b462-bdfc0045c2cb",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/{{lodgingEnpoint}}/00000000-0000-0000-0000-000000000000",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{lodgingEnpoint}}",
+										"00000000-0000-0000-0000-000000000000"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetByOk",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "31ab9bbc-d205-4939-8856-34e2ebaf34e4",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/{{lodgingEnpoint}}?TuristLocationId=0C877B25-6240-1647-738B-1E0DA9F96DBD&CheckIn=2019-10-1&CheckOut=2019-10-3&Adults=2&Children=1&Baby=1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{lodgingEnpoint}}"
+									],
+									"query": [
+										{
+											"key": "TuristLocationId",
+											"value": "0C877B25-6240-1647-738B-1E0DA9F96DBD"
+										},
+										{
+											"key": "CheckIn",
+											"value": "2019-10-1"
+										},
+										{
+											"key": "CheckOut",
+											"value": "2019-10-3"
+										},
+										{
+											"key": "Adults",
+											"value": "2"
+										},
+										{
+											"key": "Children",
+											"value": "1"
+										},
+										{
+											"key": "Baby",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetByNoAdults",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "3ba1b705-cdc2-4042-92c1-2be1b87756d0",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/{{lodgingEnpoint}}?TuristLocationId=0C877B25-6240-1647-738B-1E0DA9F96DBD&CheckIn=2019-10-1&CheckIn=2019-10-10&Children=1&Baby=1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{lodgingEnpoint}}"
+									],
+									"query": [
+										{
+											"key": "TuristLocationId",
+											"value": "0C877B25-6240-1647-738B-1E0DA9F96DBD"
+										},
+										{
+											"key": "CheckIn",
+											"value": "2019-10-1"
+										},
+										{
+											"key": "CheckIn",
+											"value": "2019-10-10"
+										},
+										{
+											"key": "Adults",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "Children",
+											"value": "1"
+										},
+										{
+											"key": "Baby",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Delete",
+					"item": [
+						{
+							"name": "DeleteExistant",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1c561e4d-7c38-442a-8ac9-f33dc42f9975",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/{{lodgingEnpoint}}/0b408348-0793-465d-9f9f-017da0bbc2ae",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{lodgingEnpoint}}",
+										"0b408348-0793-465d-9f9f-017da0bbc2ae"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteNonExistant",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "fd34d441-fbca-4597-8916-fccd197b67b2",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/{{lodgingEnpoint}}/00000000-0000-0000-0000-000000000000",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{lodgingEnpoint}}",
+										"00000000-0000-0000-0000-000000000000"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "TuristLocations",
+			"item": [
+				{
+					"name": "Create",
+					"item": [
+						{
+							"name": "AddOk",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "abe8d584-be52-4c44-b9bc-55fa88a815fa",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\" : \"Test Name\",\r\n    \"Description\" : \"Test Description\",\r\n    \"ImagePath\" : \"http://www.example.com/\",\r\n    \"RegionId\" : \"DD3163E0-28FF-C613-C52A-A71B9C3D9E01\",\r\n    \"CategoryIds\" : [\"25FC0242-D612-239D-4796-A3258BF1ECEC\", \"A9B8F6E6-44A2-A441-3CCF-2F0192D78693\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{tlEndpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{tlEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddNull",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "da7ff9ea-b1ea-44ad-9868-ab3df9433218",
+										"exec": [
+											"pm.test(\"Status code is 415\", function () {\r",
+											"  pm.response.to.have.status(415);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/{{tlEndpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{tlEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddInvalidModel",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b369be43-fbb7-4d25-babd-ed3357fde2a8",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\" : \"Test Name\",\r\n    \"Description\" : \"Test Description\",\r\n    \"ImagePath\" : \"IT IS AN INVALID URL\",\r\n    \"RegionId\" : \"NON VALID\",\r\n    \"CategoryIds\" : [\"25FC0242-D612-239D-4796-A3258BF1ECEC\", \"A9B8F6E6-44A2-A441-3CCF-2F0192D78693\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{tlEndpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{tlEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get",
+					"item": [
+						{
+							"name": "GetTuristLocations",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "18a64bc5-dccf-46d0-ab76-47506beac6ac",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/{{tlEndpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{tlEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetTuristLocationById",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ea5090cb-b9f1-4398-bdbf-7fa369bdd920",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/{{tlEndpoint}}/3642DE62-392E-42A0-544B-FADF51F4F050",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{tlEndpoint}}",
+										"3642DE62-392E-42A0-544B-FADF51F4F050"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetTuristLocationByIdNonExistant",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c98b3593-659c-4135-8b7b-e8d699e968d4",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/{{tlEndpoint}}/25FC0242-D612-239D-4796-A3258BF1ECEC",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{tlEndpoint}}",
+										"25FC0242-D612-239D-4796-A3258BF1ECEC"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetFromCategoryAndRegion",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "247037b8-083c-4c29-8aa9-cf70f4d1c5bd",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/{{tlEndpoint}}?RegionId=DD3163E0-28FF-C613-C52A-A71B9C3D9E01&CategoryId=25FC0242-D612-239D-4796-A3258BF1ECEC",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{tlEndpoint}}"
+									],
+									"query": [
+										{
+											"key": "RegionId",
+											"value": "DD3163E0-28FF-C613-C52A-A71B9C3D9E01"
+										},
+										{
+											"key": "CategoryId",
+											"value": "25FC0242-D612-239D-4796-A3258BF1ECEC"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "GetCategories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ba5a32ab-f613-4616-bd28-e14b4edf5dde",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/{{categoryEndpoint}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"{{categoryEndpoint}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Region",
+			"item": [
+				{
+					"name": "GetRegions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c8a241b6-e81a-48ed-ba4d-d458dbfd6275",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/{{regionsEndpoint}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"{{regionsEndpoint}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Add",
+					"item": [
+						{
+							"name": "AddOk",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "504468b1-d4cc-4683-99cf-aab8eb934c9f",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"FullName\" : \"John\",\r\n    \"Email\" : \"test_john@test.com\",\r\n    \"Password\" : \"Test1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{userEndpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{userEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddInvalid",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "064b33a5-658a-411a-93aa-d24ca851da69",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"FullName\" : \"John\",\r\n    \"Email\" : \"test_john@test.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{userEndpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{userEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddNull",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "46ebe9af-51fb-4a3b-9d11-897b208080b8",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/{{userEndpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{userEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get",
+					"item": [
+						{
+							"name": "GetUsers",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "dab8cd97-d50d-49b4-8533-86e26d11720d",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/{{userEndpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{userEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Delete",
+					"item": [
+						{
+							"name": "DeleteExistingUser",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "28e382e3-a70e-4e58-a56a-fe2cb17bf382",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/{{userEndpoint}}/interdum.libero@in.ca",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{userEndpoint}}",
+										"interdum.libero@in.ca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteNonExisting",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1aa2d861-697a-449a-9d8e-72f8c7b000ff",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/{{userEndpoint}}/fake@email.com",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{userEndpoint}}",
+										"fake@email.com"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Update",
+					"item": [
+						{
+							"name": "EditExisting",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e9c2845c-f79c-4570-8a4a-d26c098cb781",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"FullName\" : \"New Name\",\r\n    \"Email\" : \"interdum.libero@in.ca\",\r\n    \"Password\" : \"NewPass1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{userEndpoint}}/interdum.libero@in.ca",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{userEndpoint}}",
+										"interdum.libero@in.ca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EditNonExisting",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "39f66176-986c-4e92-9561-09cbb3adc742",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"FullName\" : \"New Name\",\r\n    \"Email\" : \"fake@email.com\",\r\n    \"Password\" : \"NewPass1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{userEndpoint}}/fake@email.com",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{userEndpoint}}",
+										"fake@email.com"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Session",
+			"item": [
+				{
+					"name": "LoginValid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "06a539ad-8a6c-4176-92ed-3ca2cc7d50a7",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\":\"sit.amet.risus@orciconsectetuereuismod.net\",\r\n    \"Password\":\"BXC80UPP4EG\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/{{sessionsEndpoint}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"{{sessionsEndpoint}}",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LoginNull",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0f20218e-38b5-4a91-82c9-a4bd7860225b",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"  pm.response.to.have.status(400);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/{{sessionsEndpoint}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"{{sessionsEndpoint}}",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LoginInvalid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1335a2a0-9fba-4e25-b1c8-aa3e969f4011",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"  pm.response.to.have.status(400);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\":\"sit.amet.risus@orciconsectetuereuismod.net\",\r\n    \"Password\":\"wrong password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/{{sessionsEndpoint}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"{{sessionsEndpoint}}",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Reserve",
+			"item": [
+				{
+					"name": "Update",
+					"item": [
+						{
+							"name": "Update reserve state",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0b7c8276-8555-4bf7-bb5c-cb132c84538b",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"ReserveId\":\"71EBE6CB-7671-727D-D4D4-997F7A6EE11D\",\r\n    \"Description\":\"Reserve change to payment approval\",\r\n    \"State\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{reservesEndpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{reservesEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wrong update reserve state",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "e4bfe7da-9b82-4d82-a3c6-afec3c6f6aac",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"ReserveId\":\"9FB4B34E-6874-4F72-AA66-8AD5E870CE78\",\r\n    \"Description\":\"Reserve change to payment approval\",\r\n    \"State\":\"invalid state\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{reservesEndpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{reservesEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wrong update reserve state description",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "12c8460e-0e55-460f-9e3a-e3d0e4cbe5c7",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"ReserveId\":\"9FB4B34E-6874-4F72-AA66-8AD5E870CE78\",\r\n    \"Description\":\"Reserve change to payment approval\",\r\n    \"State\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{reservesEndpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{reservesEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wrong update reserve state description",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "949f8322-b394-417c-884e-694e19a6ca15",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"ReserveId\":\"9FB4B34E-6874-4F72-AA66-8AD5E870CE78\",\r\n    \"Description\":\"\",\r\n    \"State\":6\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{reservesEndpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{reservesEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wrong update reserve invalid state",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a742df9f-2069-40be-935a-fae2369202a8",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"ReserveId\":\"9FB4B34E-6874-4F72-AA66-8AD5E870CE78\",\r\n    \"Description\":\"\",\r\n    \"State\":\"invalid state\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{reservesEndpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{reservesEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "GetById",
+					"item": [
+						{
+							"name": "Get reserve by Id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "5fc1fbd2-d13f-421e-9229-7ce38c567800",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/{{reservesEndpoint}}/28C1FFEF-E6FC-1A6F-4A29-0E227CE148BC",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{reservesEndpoint}}",
+										"28C1FFEF-E6FC-1A6F-4A29-0E227CE148BC"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wrong get reserve by Id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "26459d18-30f6-4a7c-a221-294f2dc74298",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/{{reservesEndpoint}}/00000000-0000-0000-0000-00000000000",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{reservesEndpoint}}",
+										"00000000-0000-0000-0000-00000000000"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Create",
+					"item": [
+						{
+							"name": "Create Reserve",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "727f7d37-683e-4a14-a156-7b2c66d7d25b",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"LodgingId\":\"0b408348-0793-465d-9f9f-017da0bbc2ae\",\r\n    \"CheckIn\":\"2019-10-10\",\r\n    \"CheckOut\":\"2019-10-29\",\r\n    \"Adults\":2,\r\n    \"Children\":0,\r\n    \"Babies\":0,\r\n    \"ContactFirstName\":\"Mark\",\r\n    \"ContactLastName\":\"Fekkear\",\r\n    \"ContactEmail\":\"markfekkear@hotmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{reservesEndpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{reservesEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wrong reserve with invalid children",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9651a7c8-d14e-4481-8bdd-c30ec13084ab",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"LodgingId\":\"0b408348-0793-465d-9f9f-017da0bbc2ae\",\r\n    \"CheckIn\":\"2019-10-10\",\r\n    \"CheckOut\":\"2019-10-29\",\r\n    \"Adults\":2,\r\n    \"Children\":-1,\r\n    \"Babies\":0,\r\n    \"ContactFirstName\":\"Mark\",\r\n    \"ContactLastName\":\"Fekkear\",\r\n    \"ContactEmail\":\"markfekkear@hotmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{reservesEndpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{reservesEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wrong reserve with invalid babies",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4446c05a-bd8b-407a-8ac2-b65728db58a1",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"LodgingId\":\"0b408348-0793-465d-9f9f-017da0bbc2ae\",\r\n    \"CheckIn\":\"2019-10-10\",\r\n    \"CheckOut\":\"2019-10-29\",\r\n    \"Adults\":2,\r\n    \"Children\":0,\r\n    \"Babies\":-1,\r\n    \"ContactFirstName\":\"Mark\",\r\n    \"ContactLastName\":\"Fekkear\",\r\n    \"ContactEmail\":\"markfekkear@hotmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{reservesEndpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{reservesEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wrong reserve with invalid dates",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "641c1420-3375-44c5-8c12-bd6e0f00677c",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"LodgingId\":\"0b408348-0793-465d-9f9f-017da0bbc2ae\",\r\n    \"CheckIn\":\"2019-10-20\",\r\n    \"CheckOut\":\"2019-10-10\",\r\n    \"Adults\":2,\r\n    \"Children\":0,\r\n    \"Babies\":-1,\r\n    \"ContactFirstName\":\"Mark\",\r\n    \"ContactLastName\":\"Fekkear\",\r\n    \"ContactEmail\":\"markfekkear@hotmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{reservesEndpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{reservesEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wrong reserve with invalid contact details",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "86904fd7-360a-4cf0-b96b-7ddc07df28bc",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"LodgingId\":\"0b408348-0793-465d-9f9f-017da0bbc2ae\",\r\n    \"CheckIn\":\"2019-10-20\",\r\n    \"CheckOut\":\"2019-10-10\",\r\n    \"Adults\":2,\r\n    \"Children\":0,\r\n    \"Babies\":-1,\r\n    \"ContactFirstName\":\"\",\r\n    \"ContactLastName\":\"\",\r\n    \"ContactEmail\":\"markfekkear@hotmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{reservesEndpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{reservesEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wrong reserve with invalid lodgingId",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"LodgingId\":\"00000000-0000-0000-0000-00000000000\",\r\n    \"CheckIn\":\"2019-10-20\",\r\n    \"CheckOut\":\"2019-10-10\",\r\n    \"Adults\":2,\r\n    \"Children\":0,\r\n    \"Babies\":-1,\r\n    \"ContactFirstName\":\"\",\r\n    \"ContactLastName\":\"\",\r\n    \"ContactEmail\":\"markfekkear@hotmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/{{reservesEndpoint}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"{{reservesEndpoint}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{adminToken}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "auth",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "881d547a-cb58-449b-9677-1575dc388839",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "5c3874ec-95c6-4119-a08e-a1742d81ad28",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "d0087387-654a-4a54-9292-4054866eb628",
+			"key": "url",
+			"value": "https://localhost:44365"
+		},
+		{
+			"id": "521e70ab-19e8-44ac-be04-5d22cc45fe22",
+			"key": "sessionsEndpoint",
+			"value": "sessions"
+		},
+		{
+			"id": "01945dda-4b6a-4f8e-a7b7-8ba35b332efd",
+			"key": "lodgingEnpoint",
+			"value": "lodgings"
+		},
+		{
+			"id": "8bf4fac4-6d39-4ccc-ab5d-6d2f25176d85",
+			"key": "userEndpoint",
+			"value": "users"
+		},
+		{
+			"id": "96f1ab67-9bb1-4364-9610-5301736329b5",
+			"key": "tlEndpoint",
+			"value": "turistLocations"
+		},
+		{
+			"id": "77a8b8e5-66f0-45a5-ae82-0b0367c718dd",
+			"key": "regionsEndpoint",
+			"value": "regions"
+		},
+		{
+			"id": "ffd99e39-b3fa-47a1-a64f-61c334a7923c",
+			"key": "lodgingsEndpoint",
+			"value": "lodgings"
+		},
+		{
+			"id": "e925e9b4-64c1-48e0-9d89-d7a2eb8d53e9",
+			"key": "categoryEndpoint",
+			"value": "categories"
+		},
+		{
+			"id": "65fad958-2a49-478f-8b33-181bd73c716f",
+			"key": "adminToken",
+			"value": "269de124-bc4f-4407-a672-095eabeb2043"
+		},
+		{
+			"id": "b959b148-db17-43b6-a1ab-1bb7c40291c9",
+			"key": "adminEmail",
+			"value": "admin@wetravel.com"
+		},
+		{
+			"id": "08e46242-1380-45ee-873c-33bc6c04be9f",
+			"key": "adminPass",
+			"value": "AccountForTest123"
+		},
+		{
+			"id": "50c745bc-cdaa-4069-8e56-8f82b4f7678c",
+			"key": "reservesEndpoint",
+			"value": "reserves"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

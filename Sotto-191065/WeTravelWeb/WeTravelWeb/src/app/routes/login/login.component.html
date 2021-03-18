@@ -1,0 +1,35 @@
+﻿<p-card [style]="{'margin': '50px 10%'}">
+  <div class="login-form-container">
+    <h1>Login</h1>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="p-field p-grid">
+        <label class="p-col-fixed">Email</label>
+        <div class="p-col">
+          <input type="email" [ngClass]="submitted && f.email.errors ? 'p-invalid' : ''" formControlName="email"
+            pInputText>
+          <small class="p-invalid" *ngIf="submitted && f.email.errors"><br>Email is required</small>
+        </div>
+      </div>
+
+      <div class="p-field p-grid">
+        <label class="p-col-fixed">Password</label>
+        <div class="p-col">
+          <input type="password" [ngClass]="submitted && f.email.errors ? 'p-invalid' : ''" formControlName="password"
+            pInputText>
+          <small class="p-invalid" *ngIf="submitted && f.password.errors"><br>Password is required</small>
+        </div>
+      </div>
+
+      <div class="login-footer">
+        <div class="p-field p-grid">
+          <div class="p-col">
+            <p-button type="submit" label="Login" pRipple [disabled]="loading" class="p-button-raised"></p-button>
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            <div *ngIf="error" class="p-invalid">{{error}}</div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</p-card>

@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WeTravel.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:WeTravel.WebApi.CategoryController.Get">
+            <summary>
+            Obtener Categories.
+            </summary>
+            <returns>Retorna la lista de las categorias</returns>
+            <response code="200">Se obtienen las categorias correctamente</response>
+            <response code="500">Ocrrio un error fatal en el servidor</response>
+        </member>
+        <member name="M:WeTravel.WebApi.LodgingController.Create(WeTravel.Model.LodgingModelIn)">
+            <summary>
+            Crear un nuevo Hospedaje.
+            </summary>
+            <param name="lodging">Modelo del Hospedaje a crear</param>
+            <response code="200">Se ha agregado correctamente</response>
+            <response code="400">El modelo previsto es invalido o ya existe el Hospedaje</response>
+            <response code="401">El usuario no esta autenticado</response>
+            <response code="500">Ocrrio un error fatal en el servidor</response>
+        </member>
+        <member name="M:WeTravel.WebApi.LodgingController.Delete(System.Guid)">
+            <summary>
+            Borrar un nuevo Hospedaje.
+            </summary>
+            <param name="id">Id del Hospedaje</param>
+            <response code="200">Se ha borrado correctamente correctamente</response>
+            <response code="400">No existe un Hospedaje con la Id prevista</response>
+            <response code="401">El usuario no esta autenticado</response>
+            <response code="500">Ocrrio un error fatal en el servidor</response>
+        </member>
+        <member name="M:WeTravel.WebApi.LodgingController.Get(WeTravel.Model.LodgingModelFilter)">
+            <summary>
+            Buscar Hospejes por filtro.
+            </summary>
+            <param name="filter">Id del Hospedaje</param>
+            <response code="200">Se ha encontrado los hospedajes</response>
+            <response code="400">El modelo previsto es invalido</response>
+            <response code="500">Ocrrio un error fatal en el servidor</response>
+        </member>
+        <member name="M:WeTravel.WebApi.LodgingController.UpdateAvailable(System.Guid)">
+            <summary>
+            Actualiza un Hospedaje.
+            </summary>
+            <param name="lodgingId">Id del Hospedaje a actualizar</param>
+            <response code="200">Se ha actualizado correctamente</response>
+            <response code="400">No existe un Hospedaje con la Id prevista o el model previsto es invalido</response>
+            <response code="401">El usuario no esta autenticado</response>
+            <response code="500">Ocrrio un error fatal en el servidor</response>
+        </member>
+        <member name="M:WeTravel.WebApi.LodgingController.GetFromId(System.Guid)">
+            <summary>
+            Obtener un Hospedaje.
+            </summary>
+            <param name="id">Id del Hospedaje a buscar</param>
+            <response code="200">Se ha encontrado correctamente</response>
+            <response code="400">No existe un Hospedaje con la Id prevista</response>
+            <response code="500">Ocrrio un error fatal en el servidor</response>
+        </member>
+        <member name="M:WeTravel.WebApi.RegionController.Get">
+            <summary>
+            Obtener regiones.
+            </summary>
+            <returns>Retorna la lista de las regiones en el sistema</returns>
+            <response code="200">Las regiones se obtienen correctamente</response>
+            <response code="500">Ocrrio un error fatal en el servidor</response>
+        </member>
+        <member name="M:WeTravel.WebApi.ReserveController.Create(WeTravel.Model.ReserveModelIn)">
+            <summary>
+            Crea una reserva.
+            </summary>
+            <param name="model">Model de la reserva a crear</param>
+            <response code="200">Se ha creado la reserva correctamente</response>
+            <response code="400">El model provisto es invalido o el Hospedaje no existe</response>
+            <response code="500">Ocrrio un error fatal en el servidor</response>
+        </member>
+        <member name="M:WeTravel.WebApi.ReserveController.GetFromId(System.Guid)">
+            <summary>
+            Buscar una reserva por Id.
+            </summary>
+            <param name="id">Id de la reserva</param>
+            <response code="200">Se obtuvo la Reserva correctamente</response>
+            <response code="400">No existe una Reserva con la Id prevista</response>
+            <response code="500">Ocrrio un error fatal en el servidor</response>
+        </member>
+        <member name="M:WeTravel.WebApi.ReserveController.UpdateState(WeTravel.Model.ReserveDescriptionModelIn)">
+            <summary>
+            Actualiza el estado de una reserva existente.
+            </summary>
+            <param name="reserveDescriptionModel">Model de la reserva a actualizar</param>
+            <response code="200">Se obtuvo la Reserva correctamente</response>
+            <response code="400">No existe una Reserva con la Id prevista</response>
+            <response code="500">Ocrrio un error fatal en el servidor</response>
+        </member>
+        <member name="M:WeTravel.WebApi.Controllers.SessionController.Login(WeTravel.Model.LoginModelIn)">
+            <summary>
+            Crear un login.
+            </summary>
+            <param name="login">Login</param>
+            <returns>Se retorna el token para usar en la API</returns>
+            <response code="200">Se crea la sesion correctamente</response>
+            <response code="400">No se ha encontrado un usuario con email y password prevista</response>
+            <response code="500">Ocrrio un error fatal en el servidor</response>
+        </member>
+        <member name="M:WeTravel.WebApi.TouristLocationController.Create(WeTravel.Model.TouristLocationModelIn)">
+            <summary>
+            Crear una nueva TouristLocation.
+            </summary>
+            <param name="model">Modelo de TouristLocation a crear</param>
+            <response code="200">Se ha agregado correctamente</response>
+            <response code="400">El modelo previsto es invalido</response>
+            <response code="401">El usuario no esta autenticado</response>
+            <response code="500">Ocrrio un error fatal en el servidor</response>
+        </member>
+        <member name="M:WeTravel.WebApi.TouristLocationController.Get(WeTravel.Model.TouristLocationModelFilter)">
+            <summary>
+            Buscar TouristLocations por filtros.
+            </summary>
+            <param name="filters">Filtro de busqueda</param>
+            <response code="200">Se ha encontrado las TouristLocation filtradas</response>
+            <response code="400">El filtro es invalido</response>
+            <response code="500">Ocrrio un error fatal en el servidor</response>
+        </member>
+        <member name="M:WeTravel.WebApi.TouristLocationController.GetFromId(System.Guid)">
+            <summary>
+            Buscar TouristLocation por ID.
+            </summary>
+            <param name="id">Id de TouristLocation a buscar</param>
+            <response code="200">Se ha encontrado al TouristLocation correctamente</response>
+            <response code="400">No exise un TouristLocation con la ID prevista</response>
+            <response code="500">Ocrrio un error fatal en el servidor</response>
+        </member>
+        <member name="M:WeTravel.WebApi.UserController.Create(WeTravel.Model.UserModelIn)">
+            <summary>
+            Crea un usuario.
+            </summary>
+            <param name="model">Modelo de usuario a crear</param>
+            <response code="200">Ha sido exitoso</response>
+            <response code="400">El modelo preveido es invalido o el usuario existe previamente</response>
+            <response code="401">El usuario no esta autenticado</response>
+            <response code="500">Ocrrio un error fatal en el servidor</response>
+        </member>
+        <member name="M:WeTravel.WebApi.UserController.Delete(System.String)">
+            <summary>
+            Borra un usuario.
+            </summary>
+            <param name="email">Email de usuario</param>
+            <response code="200">El borrado a sido exitoso</response>
+            <response code="400">No existe ningun usuario con ese mail</response>
+            <response code="401">El usuario no esta autenticado</response>
+            <response code="500">Ocrrio un error fatal en el servidor</response>
+        </member>
+        <member name="M:WeTravel.WebApi.UserController.UpdateAvailable(WeTravel.Model.UserModelIn)">
+            <summary>
+            Actualiza un usuario existente.
+            </summary>
+            <param name="updatedUserData">Modelo de usuario a actualizar</param>
+            <response code="200">El borrado a sido exitoso</response>
+            <response code="400">No existe ningun usuario con ese mail</response>
+            <response code="401">El usuario no esta autenticado</response>
+            <response code="500">Ocrrio un error fatal en el servidor</response>
+        </member>
+        <member name="M:WeTravel.WebApi.UserController.Get">
+            <summary>
+            Actualiza un usuario existente.
+            </summary>
+            <response code="200">Se han conseguido los usuarios exitosamente</response>
+            <response code="401">El usuario no esta autenticado</response>
+            <response code="500">Ocrrio un error fatal en el servidor</response>
+        </member>
+    </members>
+</doc>
